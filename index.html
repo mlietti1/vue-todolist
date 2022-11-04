@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css' integrity='sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==' crossorigin='anonymous'/>
+  <link rel="stylesheet" href="css/style.css">
+  <title>To Do List</title>
+</head>
+<body>
+  
+  <div id="app" class="container">
+
+    <div class="logo">
+      <h1>Tasks List</h1>
+    </div>
+    <div class="input-area">
+      <input placeholder="New task" type="text">
+      <button >Add</button>
+      
+    </div>
+
+    <div class="tasks-area">
+      <ul>
+        <li class="task">
+          <span>task 1</span>
+          <i class="fa-solid fa-trash-can"></i>
+        </li>
+      </ul>
+      <!-- <h3>You have completed all tasks! &#128526;</h3> -->
+    </div>
+
+  </div>
+
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
