@@ -19,13 +19,16 @@
       <h1>{{title}}</h1>
     </div>
     <div class="input-area">
-      <input placeholder="New task" type="text">
-      <button>Add</button>
+      <input @keyup.enter="createTask" 
+      v-model.trim="newMsgString" 
+      placeholder="New task" 
+      type="text">
+      <button @click="createTask">Add</button>
       <p class="error">{{errorString}}</p>
     </div>
 
     <div class="tasks-area">
-      <ul>
+      <ul v-if="tasks.length > 0">
         <li v-for="(task, index) in tasks" 
         @click="task.done = !task.done" 
         :class="{'done': task.done}" 
@@ -34,7 +37,7 @@
           <i @click.stop="deleteTask(index)" class="fa-solid fa-trash-can"></i>
         </li>
       </ul>
-      <!-- <h3>You have completed all tasks! &#128526;</h3> -->
+      <h3 v-else>You have completed all tasks! &#127881;</h3>
     </div>
 
   </div>

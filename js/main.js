@@ -31,6 +31,20 @@ createApp({
       }else{
         this.errorString = 'You cannot remove a task if it is not completed!';
       }
+    },
+    createTask(){
+      this.errorString = '';
+      if(this.newMsgString.length < 5){
+        this.errorString = 'Your task is too short!';
+        this.newMsgString = '';
+      }else{
+        const newTask = {
+          text: this.newMsgString,
+          done: false
+        }
+        this.tasks.unshift(newTask);
+        this.newMsgString = '';
+      }
     }
   },
 
