@@ -23,6 +23,17 @@ createApp({
     }
   },
 
+  methods:{
+    deleteTask(index){
+      this.errorString = '';
+      if (this.tasks[index].done){
+        this.tasks.splice(index, 1);
+      }else{
+        this.errorString = 'You cannot remove a task if it is not completed!';
+      }
+    }
+  },
+
   mounted(){
     console.log('montato');
   }

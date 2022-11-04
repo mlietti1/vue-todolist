@@ -21,7 +21,7 @@
     <div class="input-area">
       <input placeholder="New task" type="text">
       <button>Add</button>
-      
+      <p class="error">{{errorString}}</p>
     </div>
 
     <div class="tasks-area">
@@ -31,7 +31,7 @@
         :class="{'done': task.done}" 
         class="task">
           <span>{{task.text}}</span>
-          <i class="fa-solid fa-trash-can"></i>
+          <i @click.stop="deleteTask(index)" class="fa-solid fa-trash-can"></i>
         </li>
       </ul>
       <!-- <h3>You have completed all tasks! &#128526;</h3> -->
