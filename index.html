@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css' integrity='sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==' crossorigin='anonymous'/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Titan+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>To Do List</title>
 </head>
@@ -13,18 +16,21 @@
   <div id="app" class="container">
 
     <div class="logo">
-      <h1>Tasks List</h1>
+      <h1>{{title}}</h1>
     </div>
     <div class="input-area">
       <input placeholder="New task" type="text">
-      <button >Add</button>
+      <button>Add</button>
       
     </div>
 
     <div class="tasks-area">
       <ul>
-        <li class="task">
-          <span>task 1</span>
+        <li v-for="(task, index) in tasks" 
+        @click="task.done = !task.done" 
+        :class="{'done': task.done}" 
+        class="task">
+          <span>{{task.text}}</span>
           <i class="fa-solid fa-trash-can"></i>
         </li>
       </ul>

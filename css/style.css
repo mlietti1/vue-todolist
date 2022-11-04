@@ -12,12 +12,13 @@ body {
 .container {
   width: 60%;
   padding: 40px 0;
-  margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto; 
 }
 
 .logo, .input-area {
   text-align: center;
+  font-family: 'Titan One', cursive;
+  font-size: 2rem;
 }
 
 
@@ -48,6 +49,7 @@ body {
 }
 
 .tasks-area {
+  font-family: 'Indie Flower', cursive;
   background-color: #A8DADC;
   border-radius: 10px;
   padding: 40px;
@@ -59,6 +61,10 @@ body {
   padding: 20px;
   border-bottom: 1px solid #457B9D;
   cursor: pointer;
+}
+
+.task i:active {
+  color: #E63946;
 }
 
 .task.done span{
