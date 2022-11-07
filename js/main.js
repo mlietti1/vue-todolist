@@ -37,6 +37,9 @@ createApp({
       if(this.newMsgString.length < 5){
         this.errorString = 'Your task is too short!';
         this.newMsgString = '';
+      }else if(this.tasks.find(task => task.text.toLowerCase() === this.newMsgString.toLowerCase())
+      ){
+        this.errorString = 'This item is already in your list!'
       }else{
         const newTask = {
           text: this.newMsgString,
